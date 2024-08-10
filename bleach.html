@@ -27,6 +27,7 @@
         <p id="dialogue-text">Welcome, Head Captain! What are your orders?</p>
         <button id="deploy-btn">Deploy Squad</button>
         <button id="meeting-btn">Hold Meeting</button>
+        <button id="resolve-issue-btn">Resolve Current Issue</button>
     </div>
 
     <!-- Map Section -->
@@ -62,6 +63,16 @@
             </select>
 
             <button id="confirm-deploy">Confirm Deployment</button>
+        </div>
+    </div>
+
+    <!-- Modal for resolving issues -->
+    <div id="issue-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Resolve Current Issue</h2>
+            <p id="issue-text"></p>
+            <button id="resolve-issue">Resolve</button>
         </div>
     </div>
 
