@@ -7,30 +7,32 @@
     <link rel="stylesheet" href="bleach.css">
 </head>
 <body>
-    <div id="hud">
-        <div id="squad-status">
-            <h2>Squad Status</h2>
-            <div id="squad-list">
-                <!-- Squad statuses will be inserted here by JavaScript -->
-            </div>
-        </div>
-        <div id="resources">
-            <h2>Resources</h2>
-            <p id="energy-status">Spiritual Energy: 500</p>
-            <p id="morale-status">Morale: High</p>
+    <!-- Resources Nav Bar -->
+    <div id="resources-nav">
+        <div id="energy-status">Spiritual Energy: 500</div>
+        <div id="morale-status">Morale: High</div>
+    </div>
+
+    <!-- Squad Status Section -->
+    <div id="squad-status">
+        <h2>Squad Status</h2>
+        <div id="squad-list">
+            <!-- Squad statuses will be inserted here by JavaScript -->
         </div>
     </div>
 
-    <div id="map-container">
-        <h2>Seireitei Map</h2>
-        <img src="images/SeireiteiMap.webp" alt="Seireitei Map" id="seireitei-map">
-    </div>
-
+    <!-- Dialogue and Actions -->
     <div id="dialogue">
         <h2>Dialogue</h2>
         <p id="dialogue-text">Welcome, Head Captain! What are your orders?</p>
         <button id="deploy-btn">Deploy Squad</button>
         <button id="meeting-btn">Hold Meeting</button>
+    </div>
+
+    <!-- Map Section -->
+    <div id="map-container">
+        <h2>Seireitei Map</h2>
+        <img src="images/SeireiteiMap.webp" alt="Seireitei Map" id="seireitei-map">
     </div>
 
     <!-- Modal for selecting squad and action -->
