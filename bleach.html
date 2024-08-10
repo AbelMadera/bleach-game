@@ -7,36 +7,54 @@
     <link rel="stylesheet" href="bleach.css">
 </head>
 <body>
-    <div id="resources-nav">
-        <div id="resources">
-            <p>Spiritual Energy: 500</p>
-            <p>Morale: High</p>
+    <header>
+        <nav id="resources">
+            <div class="resource-item" id="spiritual-energy">
+                <h2>Spiritual Energy</h2>
+                <p>500</p>
+            </div>
+            <div class="resource-item" id="morale">
+                <h2>Morale</h2>
+                <p>High</p>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="squad-status">
+            <h2>Squad Status</h2>
+            <div id="squad-list">
+                <!-- Squad statuses will be inserted here by JavaScript -->
+            </div>
+        </section>
+        
+        <section id="dialogue">
+            <h2>Dialogue</h2>
+            <p>Welcome, Head Captain! What are your orders?</p>
+            <button id="deploy-btn">Deploy Squad</button>
+            <button id="meeting-btn">Hold Meeting</button>
+        </section>
+
+        <section id="map">
+            <h2>Seireitei Map</h2>
+            <div id="map-container">
+                <img src="images/SeireiteiMap.webp" alt="Seireitei Map" id="seireitei-map">
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for squad details -->
+    <div id="squad-detail-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-squad-details" class="close">&times;</span>
+            <div id="squad-details"></div>
         </div>
     </div>
 
-    <div id="squad-status">
-        <h2>Squad Status</h2>
-        <div id="squad-list">
-            <!-- Squad statuses will be inserted here by JavaScript -->
-        </div>
-    </div>
-
-    <div id="dialogue">
-        <h2>Dialogue</h2>
-        <p>Welcome, Head Captain! What are your orders?</p>
-        <button id="deploy-btn">Deploy Squad</button>
-        <button id="resolve-issue-btn">Resolve Issue</button>
-    </div>
-
-    <div id="map-container">
-        <h2>Seireitei Map</h2>
-        <img src="images/SeireiteiMap.webp" alt="Seireitei Map" id="seireitei-map">
-    </div>
-
-    <!-- Modal for selecting squad and action -->
+    <!-- Modal for deploying squads -->
     <div id="deploy-modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span id="close-deploy" class="close">&times;</span>
             <h2>Deploy Squad</h2>
             <label for="squad-select">Select Squad:</label>
             <select id="squad-select">
@@ -63,14 +81,22 @@
         </div>
     </div>
 
-    <!-- Modal for squad details -->
-    <div id="squad-detail-modal" class="modal">
+    <!-- Modal for holding a meeting -->
+    <div id="meeting-modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Squad Details</h2>
-            <div id="squad-details">
-                <!-- Squad details will be inserted here by JavaScript -->
-            </div>
+            <span id="close-meeting" class="close">&times;</span>
+            <h2>Hold a Meeting</h2>
+            <label for="meeting-reason">Reason for Meeting:</label>
+            <input type="text" id="meeting-reason" placeholder="Enter reason here">
+
+            <label for="captain-select">Select Captain:</label>
+            <select id="captain-select">
+                <!-- Captains will be populated here by JavaScript -->
+            </select>
+
+            <button id="start-meeting">Start Meeting</button>
+            <div id="meeting-content"></div>
+            <div id="captain-dialogue"></div>
         </div>
     </div>
 
