@@ -9,51 +9,44 @@ body {
     align-items: center;
 }
 
-#hud {
-    display: flex;
-    flex-wrap: wrap;
+#resources-nav {
     width: 100%;
-    padding: 10px;
     background-color: #222;
-    box-sizing: border-box;
-}
-
-#squad-status, #resources {
-    flex: 1;
-    background-color: #333;
-    margin: 5px;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#energy-status, #morale-status {
+    margin: 0;
+}
+
+#squad-status {
+    margin-top: 60px; /* Adjust for the fixed nav bar */
+    width: 90%;
+    max-width: 800px;
+    background-color: #333;
+    padding: 20px;
     border: 2px solid #444;
-    min-width: 300px;
     box-sizing: border-box;
 }
 
-#squad-status h2, #resources h2 {
+#squad-status h2 {
     margin-top: 0;
 }
 
 #squad-list {
-    max-height: 150px;
+    max-height: 200px;
     overflow-y: auto;
 }
 
-#map-container {
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
-    margin: 20px 0;
-}
-
-#seireitei-map {
-    width: 100%;
-    height: auto;
-    border: 2px solid #444;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
 #dialogue {
-    width: 100%;
+    width: 90%;
     max-width: 800px;
     background-color: #444;
     padding: 20px;
@@ -73,6 +66,21 @@ body {
 
 #dialogue button:hover {
     background-color: #666;
+}
+
+#map-container {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#seireitei-map {
+    width: 100%;
+    height: auto;
+    border: 2px solid #444;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Modal Styles */
@@ -140,13 +148,16 @@ body {
 
 /* Media Query for Mobile Devices */
 @media (max-width: 600px) {
-    #hud {
+    #resources-nav {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
     }
 
-    #squad-status, #resources {
-        min-width: unset;
+    #energy-status, #morale-status {
+        margin: 5px 0;
+    }
+
+    #squad-status, #dialogue, #map-container {
         width: 100%;
     }
 
