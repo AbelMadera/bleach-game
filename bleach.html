@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bleach: Seireitei Command</title>
+    <link rel="stylesheet" href="bleach.css">
+</head>
+<body>
+    <div id="hud">
+        <div id="squad-status">
+            <h2>Squad Status</h2>
+            <div id="squad-list">
+                <!-- Squad statuses will be inserted here by JavaScript -->
+            </div>
+        </div>
+        <div id="resources">
+            <h2>Resources</h2>
+            <p id="energy-status">Spiritual Energy: 500</p>
+            <p id="morale-status">Morale: High</p>
+        </div>
+    </div>
+
+    <div id="map-container">
+        <h2>Seireitei Map</h2>
+        <img src="images/SeireiteiMap.webp" alt="Seireitei Map" id="seireitei-map">
+    </div>
+
+    <div id="dialogue">
+        <h2>Dialogue</h2>
+        <p id="dialogue-text">Welcome, Head Captain! What are your orders?</p>
+        <button id="deploy-btn">Deploy Squad</button>
+        <button id="meeting-btn">Hold Meeting</button>
+    </div>
+
+    <!-- Modal for selecting squad and action -->
+    <div id="deploy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Deploy Squad</h2>
+            <label for="squad-select">Select Squad:</label>
+            <select id="squad-select">
+                <!-- Squads will be populated here by JavaScript -->
+            </select>
+
+            <label for="action-select">Select Action:</label>
+            <select id="action-select">
+                <option value="Patrol">Patrol</option>
+                <option value="Recon">Recon</option>
+                <option value="Attack">Attack</option>
+                <option value="Defend">Defend</option>
+            </select>
+
+            <label for="time-select">Estimated Time:</label>
+            <select id="time-select">
+                <option value="1">1 hour</option>
+                <option value="3">3 hours</option>
+                <option value="6">6 hours</option>
+                <option value="12">12 hours</option>
+            </select>
+
+            <button id="confirm-deploy">Confirm Deployment</button>
+        </div>
+    </div>
+
+    <script src="bleach.js"></script>
+</body>
+</html>

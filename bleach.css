@@ -1,0 +1,161 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hud {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+    background-color: #222;
+    box-sizing: border-box;
+}
+
+#squad-status, #resources {
+    flex: 1;
+    background-color: #333;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #444;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+
+#squad-status h2, #resources h2 {
+    margin-top: 0;
+}
+
+#squad-list {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+#map-container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#seireitei-map {
+    width: 100%;
+    height: auto;
+    border: 2px solid #444;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#dialogue {
+    width: 100%;
+    max-width: 800px;
+    background-color: #444;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#dialogue button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#dialogue button:hover {
+    background-color: #666;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #333;
+    padding: 20px;
+    border: 2px solid #444;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content label,
+.modal-content select {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.modal-content button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #666;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    #hud {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #squad-status, #resources {
+        min-width: unset;
+        width: 100%;
+    }
+
+    #dialogue button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #modal-content {
+        width: 90%;
+    }
+}
