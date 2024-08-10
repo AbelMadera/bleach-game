@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="bleach.css">
 </head>
 <body>
-    <!-- Resources Nav Bar -->
     <div id="resources-nav">
-        <div id="energy-status">Spiritual Energy: 500</div>
-        <div id="morale-status">Morale: High</div>
+        <div id="resources">
+            <p>Spiritual Energy: 500</p>
+            <p>Morale: High</p>
+        </div>
     </div>
 
-    <!-- Squad Status Section -->
     <div id="squad-status">
         <h2>Squad Status</h2>
         <div id="squad-list">
@@ -21,16 +21,13 @@
         </div>
     </div>
 
-    <!-- Dialogue and Actions -->
     <div id="dialogue">
         <h2>Dialogue</h2>
-        <p id="dialogue-text">Welcome, Head Captain! What are your orders?</p>
+        <p>Welcome, Head Captain! What are your orders?</p>
         <button id="deploy-btn">Deploy Squad</button>
-        <button id="meeting-btn">Hold Meeting</button>
-        <button id="resolve-issue-btn">Resolve Current Issue</button>
+        <button id="resolve-issue-btn">Resolve Issue</button>
     </div>
 
-    <!-- Map Section -->
     <div id="map-container">
         <h2>Seireitei Map</h2>
         <img src="images/SeireiteiMap.webp" alt="Seireitei Map" id="seireitei-map">
@@ -66,13 +63,14 @@
         </div>
     </div>
 
-    <!-- Modal for resolving issues -->
-    <div id="issue-modal" class="modal">
+    <!-- Modal for squad details -->
+    <div id="squad-detail-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Resolve Current Issue</h2>
-            <p id="issue-text"></p>
-            <button id="resolve-issue">Resolve</button>
+            <h2>Squad Details</h2>
+            <div id="squad-details">
+                <!-- Squad details will be inserted here by JavaScript -->
+            </div>
         </div>
     </div>
 

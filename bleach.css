@@ -1,115 +1,171 @@
-body {
-    background-color: #111;
-    color: #fff;
-    font-family: Arial, sans-serif;
+/* Basic Reset */
+body, h1, h2, p, button, select {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+/* Resources Nav Bar */
 #resources-nav {
-    width: 100%;
-    background-color: #222;
-    padding: 10px;
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 15px;
     display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    position: fixed;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
     top: 0;
-    left: 0;
     z-index: 1000;
 }
 
-#energy-status, #morale-status {
-    margin: 0;
+#resources {
+    font-size: 16px;
 }
 
+/* Squad Status Section */
 #squad-status {
-    margin-top: 60px; /* Adjust for the fixed nav bar */
-    width: 90%;
-    max-width: 800px;
-    background-color: #333;
     padding: 20px;
-    border: 2px solid #444;
-    box-sizing: border-box;
+    background: #fff;
+    margin: 20px auto;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 #squad-status h2 {
-    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 24px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
 }
 
 #squad-list {
-    max-height: 200px;
+    max-height: 500px;
     overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fafafa;
 }
 
+.squad-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.squad-item:hover {
+    background: #f0f0f0;
+    transform: scale(1.02);
+}
+
+.squad-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.squad-item p {
+    margin: 5px 0;
+}
+
+/* Dialogue and Actions */
 #dialogue {
-    width: 90%;
-    max-width: 800px;
-    background-color: #444;
     padding: 20px;
-    text-align: center;
-    box-sizing: border-box;
+    background: #fff;
+    margin: 20px auto;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#dialogue h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
 }
 
 #dialogue button {
-    background-color: #555;
+    background: #3498db;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 12px 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    margin: 10px 5px;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 16px;
 }
 
 #dialogue button:hover {
-    background-color: #666;
+    background: #2980b9;
+    transform: scale(1.05);
 }
 
+/* Map Section */
 #map-container {
-    width: 90%;
-    max-width: 800px;
-    text-align: center;
-    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    margin: 20px auto;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#map-container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
 #seireitei-map {
     width: 100%;
     height: auto;
-    border: 2px solid #444;
-    max-width: 100%;
-    box-sizing: border-box;
+    border-radius: 8px;
 }
 
 /* Modal Styles */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background-color: #333;
+    background-color: #fff;
     padding: 20px;
-    border: 2px solid #444;
+    border: 1px solid #ddd;
     width: 90%;
-    max-width: 400px;
+    max-width: 600px;
     margin: auto;
-    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .modal-content h2 {
     margin-top: 0;
+    font-size: 22px;
 }
 
 .modal-content label,
@@ -120,30 +176,53 @@ body {
 }
 
 .modal-content button {
-    background-color: #555;
+    background-color: #3498db;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 6px;
+    font-size: 16px;
 }
 
 .modal-content button:hover {
-    background-color: #666;
+    background-color: #2980b9;
+    transform: scale(1.05);
 }
 
 .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: #fff;
+    color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Squad Detail Modal Styles */
+#squad-detail-modal .modal-content {
+    max-width: 700px;
+}
+
+#squad-details {
+    margin-top: 15px;
+}
+
+#squad-details h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+#squad-details p {
+    margin: 5px 0;
 }
 
 /* Media Query for Mobile Devices */
@@ -153,20 +232,20 @@ body {
         align-items: center;
     }
 
-    #energy-status, #morale-status {
-        margin: 5px 0;
-    }
-
-    #squad-status, #dialogue, #map-container {
-        width: 100%;
+    #resources {
+        font-size: 14px;
     }
 
     #dialogue button {
-        width: 100%;
-        margin: 5px 0;
+        font-size: 14px;
+        padding: 10px 15px;
     }
 
-    #modal-content {
-        width: 90%;
+    #squad-status, #map-container {
+        width: 100%;
+    }
+
+    #squad-list {
+        max-height: 300px;
     }
 }
